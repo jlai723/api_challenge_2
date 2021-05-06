@@ -1,0 +1,101 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    background-image: url(./assets/space-unsplash-1.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.container-fluid h1 {
+    margin: 0;
+    font-family: 'Nova Flat', cursive;
+    font-size: 100px;
+    color: white;
+    text-shadow: 2px 2px 0px #fc3d21;
+}
+.container-fluid h2 {
+    margin: 0;
+    font-family: 'Nova Flat', cursive;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px 0px #0b3d91;
+}
+form {
+    margin-top: 20px;
+    display: flex;
+}
+label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+#search {
+    border: none;
+    border-radius: 0.3rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    width: 300px;
+}
+#submit {
+    border: none;
+    border-radius: 0.3rem;
+    margin-left: 15px;
+    height: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    background-color: #fc3d21;
+}
+#submit:hover {
+    background-color: transparent;
+    color: white;
+    border: solid 2px #fc3d21;
+    cursor: pointer;
+}
+
+/* Results section */
+body > div > div.results > section > h1 {
+    margin-top: 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 30px;
+}
+section h3 {
+    color: white;
+}
+.results {
+    margin-top: 20px;
+}
+.carousel-item img {
+    height: 50vh;
+}
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 20vh;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.carousel-caption h5 {
+    font-size: 13px;
+}
+.carousel-caption p {
+    font-size: 10px;
+    height: 10vh;
+    overflow: hidden;
+}
+
+/* Footer */
+.text {
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+}
+.text a {
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
