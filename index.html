@@ -20,19 +20,28 @@
 
 <body>
     <div class="container-fluid">
-        <h1>NASA's</h1>
-        <h2>Biggest Hits</h2>
-        <div class="searchForm">
+        <h1>Mars'</h1>
+        <h2>Greatest Hits</h2>
+        <div class="date-search">
             <form>
-                <div class="searchBar">
-                    <label for="search">Enter one keyword to search:</label>
-                    <input type="text" name="search" id="search" required>
+                <div class="date">
+                    <label for="date">Choose a date:</label>
+                    <input type="date" name="date" id="date" required>
+                </div>
+                <div class="rover">
+                    <label for="rover">Choose a rover:</label>
+                    <select name="rover" id="rover">
+                        <option value="curiosity">Curiosity</option>
+                        <option value="opportunity">Opportunity</option>
+                        <option value="spirit">Spirit</option>
+                    </select>
                 </div>
                 <div class="button">
                     <input type="submit" value="Search" id="submit">
                 </div>
             </form>
         </div>
+
         <div class="results">
 
             <section>

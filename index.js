@@ -1,4 +1,4 @@
-const baseURL = "https://images-api.nasa.gov";
+const baseURL = "https://api.nasa.gov/mars-photos/api/v1/rovers";
 const apiKey = "Jk71pHlLTLH08Mv2WYfhgWBzPojG0EfjRTlcu6YF";
 
 const searchBtn = document.getElementById('submit');
@@ -10,10 +10,12 @@ const section = document.querySelector('section');
 function retrieveData(e) {
     e.preventDefault();
     
-    const query = document.getElementById('search').value.toLowerCase();
-    const modQuery = query.split(" ").join("");
+    const dateQuery = document.getElementById('date').value;
+
+    const roverQuery = document.getElementById('rover').value;
+    console.log(roverQuery);
     
-    fetch(`${baseURL}/search?q=${modQuery}`)
+    fetch(`${baseURL}/${roverQuery}/photos?earth_date=${dateQuery}&api_key=${apiKey}`)
         .then(res => res.json())
         .then(json => {
             displayData(json);
@@ -29,7 +31,7 @@ function displayData(json) {
         carousel.removeChild(carousel.firstChild);
     }
 
-    let elemData = json.collection.items;
+    let elemData = json.photos;
     console.log(elemData);
 
     if(elemData.length != 0) {
@@ -45,11 +47,28 @@ function displayData(json) {
             captionDiv.className = "carousel-caption d-none d-md-block";
             
             let indPhoto = elemData[i];
-            
-            photo.src = indPhoto.links ? indPhoto.links[0].href : "./assets/404-happiness-not-found.jpg";
+            let launchDate = indPhoto.rover.launch_date;
+            let landingDate = indPhoto.rover.landing_date;
+            let earthDate = indPhoto.earth_date;
 
-            title.innerHTML = indPhoto.data[0].title.substring(0,69);
-            description.innerHTML = indPhoto.data[0].description;
+            function formatDate(date) {
+                const date2 = date.split('-');
+                const dateObj = {
+                    month: date2[1],
+                    day: date2[2],
+                    year: date2[0]
+                }
+                return `${dateObj.month}/${dateObj.day}/${dateObj.year}`;
+            }
+
+            let formattedLaunchDate = formatDate(launchDate);
+            let formattedLandingDate = formatDate(landingDate);
+            let formattedEarthDate = formatDate (earthDate);
+            
+            photo.src = indPhoto.img_src;
+
+            title.innerHTML = indPhoto.rover.name;
+            description.innerHTML = `${indPhoto.rover.name} was launched on ${formattedLaunchDate}, landed on Mars on ${formattedLandingDate}, and is ${indPhoto.rover.status}. This photo was taken by the ${indPhoto.camera.full_name} (${indPhoto.camera.name}) on ${formattedEarthDate}.`;
             
             captionDiv.appendChild(title);
             captionDiv.appendChild(description);

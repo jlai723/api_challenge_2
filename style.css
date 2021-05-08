@@ -9,9 +9,10 @@ html, body {
     margin: 0;
     padding: 0;
     align-items: center;
+    background-color: black;
     background-image: url(./assets/space-unsplash-1.jpg);
     background-size: cover;
-    height: 100vh;
+    height: 100%;
 }
 .container-fluid h1 {
     margin: 0;
@@ -23,7 +24,7 @@ html, body {
 .container-fluid h2 {
     margin: 0;
     font-family: 'Nova Flat', cursive;
-    font-size: 60px;
+    font-size: 43px;
     color: white;
     text-shadow: 2px 2px 0px #0b3d91;
 }
@@ -36,18 +37,29 @@ label {
     font-size: 20px;
     color: white;
 }
-#search {
+#date {
     border: none;
     border-radius: 0.3rem;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 20px;
     line-height: 30px;
-    width: 300px;
+    width: 175px;
+}
+.rover {
+    margin-left: 20px;
+}
+#rover {
+    border: none;
+    border-radius: 0.3rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    width: 135px;
 }
 #submit {
     border: none;
     border-radius: 0.3rem;
-    margin-left: 15px;
+    margin-left: 20px;
     height: 35px;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 20px;
@@ -73,7 +85,7 @@ section h3 {
     margin-top: 20px;
 }
 .carousel-item img {
-    height: 50vh;
+    height: 45vh;
 }
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
@@ -81,12 +93,12 @@ section h3 {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 .carousel-caption h5 {
-    font-size: 13px;
+    font-size: 16px;
 }
 .carousel-caption p {
-    font-size: 10px;
+    font-size: 12px;
     height: 10vh;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 /* Footer */
